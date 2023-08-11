@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Form from './Component/Form/Form';
+import About from './Component/ForRouting/About';
+import Contact from './Component/ForRouting/Contact';
+import Badhon from './Component/ForRouting/Badhon';
+import Raja from './Component/ForRouting/Raja';
+import Nav from './Component/ForRouting/Nav';
+import { Routes,Route } from 'react-router-dom';
+import Footer from './Component/ForRouting/Footer';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <Nav></Nav>
+    <Routes>
+      
+    <Route path='/' element={<Form/>}/>
+    <Route path='/About' element={ <About/>}/>
+    <Route path='/Contact' element={<Contact/>}/>
+    <Route path='/Badhon/:id' element={ <Badhon/>}/>
+    <Route path='/Raja' element={ <Raja/>}/>
+    
+    
+   
+   
+    </Routes>
+    <Footer/>
+   </>
+    
+    
   );
 }
 
